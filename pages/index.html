@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Myntra Functional Clone</title>
+
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="logo_container">
+    <a href="#" onclick="resetFilters()">
+      <img class="myntra_home" src="../images/myntra_logo.webp" alt="Myntra Home">
+    </a>
+  </div>
+
+  <!-- NAV BAR -->
+  <nav class="nav_bar">
+    <a href="#" onclick="filterByCategory('men')">Men</a>
+    <a href="#" onclick="filterByCategory('women')">Women</a>
+    <a href="#" onclick="filterByCategory('kids')">Kids</a>
+    <a href="#" onclick="filterByCategory('home')">Home & Living</a>
+    <a href="#" onclick="filterByCategory('beauty')">Beauty</a>
+  </nav>
+
+  <!-- SEARCH -->
+  <div class="search_bar">
+    <span class="material-symbols-outlined search_icon">search</span>
+    <input
+      id="searchInput"
+      class="search_input"
+      placeholder="Search for products, brands and more"
+    >
+  </div>
+
+  <!-- ACTION BAR -->
+  <div class="action_bar">
+
+    <!-- PROFILE -->
+  <div class="action_container" onclick="toggleProfileDropdown()">
+  <span class="material-symbols-outlined action_icon">person</span>
+  <span class="action_name">Profile</span>
+</div>
+
+    <!-- WISHLIST -->
+    <div class="action_container" onclick="showWishlist()">
+      <span class="material-symbols-outlined action_icon">favorite</span>
+      <span class="action_name">Wishlist</span>
+      <span class="wishlist-count">0</span>
+    </div>
+
+    <!-- BAG -->
+    <a class="action_container" href="./bag.html">
+      <span class="material-symbols-outlined action_icon">shopping_bag</span>
+      <span class="action_name">Bag</span>
+      <span class="bag-item-count">0</span>
+    </a>
+
+  </div>
+</header>
+
+<!-- PROFILE DROPDOWN -->
+<div id="profileDropdown" class="profile-dropdown hidden">
+  <p><strong>Guest User 👋</strong></p>
+  <p>🛍 Bag Items: <span id="profileBagCount">0</span></p>
+  <p>❤️ Wishlist Items: <span id="profileWishCount">0</span></p>
+</div>
+
+
+<!-- ================= SORT ================= -->
+<div style="margin: 20px 10%;">
+  <select id="sortSelect">
+    <option value="">Sort By</option>
+    <option value="low">Price: Low to High</option>
+    <option value="high">Price: High to Low</option>
+  </select>
+</div>
+
+<!-- ================= MAIN ================= -->
+<main>
+  <div class="items-container"></div>
+</main>
+
+<!-- ================= PROFILE PANEL ================= -->
+<div id="profilePanel" class="overlay hidden">
+  <div class="panel">
+    <h3>Guest User 👋</h3>
+    <p>Bag Items: <strong id="profileBagCount">0</strong></p>
+    <p>Wishlist Items: <strong id="profileWishCount">0</strong></p>
+    <button onclick="closePanels()">Close</button>
+  </div>
+</div>
+
+<!-- ================= WISHLIST PANEL ================= -->
+<div id="wishlistPanel" class="overlay hidden">
+  <div class="panel">
+    <h3>Your Wishlist ❤️</h3>
+    <div id="wishlistItems"></div>
+    <button onclick="closePanels()">Close</button>
+  </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer_container">
+    <div class="footer_column">
+      <h3>ONLINE SHOPPING</h3>
+      <a href="#">Men</a>
+      <a href="#">Women</a>
+      <a href="#">Kids</a>
+      <a href="#">Home & Living</a>
+      <a href="#">Beauty</a>
+    </div>
+
+    <div class="footer_column">
+      <h3>USEFUL LINKS</h3>
+      <a href="#">Contact Us</a>
+      <a href="#">FAQ</a>
+      <a href="#">Terms</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+
+    <div class="footer_column">
+      <h3>EXPERIENCE</h3>
+      <a href="#">Mobile App</a>
+      <a href="#">Careers</a>
+      <a href="#">Gift Cards</a>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2023 www.myntra.com. All rights reserved.
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="../data/items.js"></script>
+<script src="../scripts/index.js"></script>
+<script src="../scripts/bag.js"></script>
+</body>
+</html>
